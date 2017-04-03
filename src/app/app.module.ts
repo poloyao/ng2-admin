@@ -37,7 +37,7 @@ import { NgaSidebarTestThreeComponent } from './sidebar-test/sidebar-test-three.
 import { NgaMenuTestComponent } from './menu-test/menu-test.component';
 import { NgaUserTestComponent } from './user-test/user-test.component';
 import { NgaAuthModule } from '../framework/auth';
-import { NgaDummyProviderService } from '../framework/auth';
+import { NgaDummyAuthProvider } from '../framework/auth';
 
 import { routes } from './app.routes';
 import { menuItems } from './menu-test/menu-items';
@@ -80,7 +80,7 @@ const NGA_TEST_COMPONENTS = [
       providers: {
 
         email: {
-          service: NgaDummyProviderService,
+          service: NgaDummyAuthProvider,
           config: {
             alwaysFail: true,
             delay: 1000,
