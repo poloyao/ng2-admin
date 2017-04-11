@@ -3,6 +3,19 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
+        path: 'daylight',
+        data:{
+          menu:{
+            title: '值日',
+            icon: 'ion-android-home',
+            pathMatch: 'prefix',
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
         path: 'dashboard',
         data: {
           menu: {
