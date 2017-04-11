@@ -17,7 +17,7 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
-
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 /*
  * Webpack Constants
@@ -209,7 +209,7 @@ module.exports = function (options) {
      */
     plugins: [
       new ExtractTextPlugin({filename: 'initial.css', allChunks: true}),
-
+      new OpenBrowserPlugin({url:'http://localhost:4000'}),
       new AssetsPlugin({
         path: helpers.root('dist'),
         filename: 'webpack-assets.json',
