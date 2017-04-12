@@ -1,8 +1,33 @@
 <div class="row">
   <div class="col-md-12">
+    <!--<button type="button" class="btn btn-success" (click)="showChildModal()">今日安排</button>-->
     <ba-card title="ckeditor" baCardClass="with-scroll">
       <ba-full-calendar [baFullCalendarConfiguration]="daylightConfiguration" baFullCalendarClass="blurCalendar" (onCalendarReady)="onCalendarReady($event)"></ba-full-calendar>
     </ba-card>
   </div>
 </div>
 
+<!-- Small modal -->
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title pull-left">{{dialogTitile | date: 'yyyy-MM-dd'}}日程安排</h4>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" required [(ngModel)]="name" name="name" >
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary confirm-btn" (click)="onSaveDialog()">保 存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
