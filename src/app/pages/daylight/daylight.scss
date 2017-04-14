@@ -142,7 +142,7 @@ div.blurCalendar{
   }
 
   .fc-today {
-    background: rgba(255,255,255,0.15);
+    background: #0FC1A1;//rgba(255,255,255,0.15);
   }
 }
 
@@ -350,6 +350,7 @@ div.blurCalendar{
   border: 1px solid $primary;
   background-color: $primary;
   font-weight: $font-normal;
+  //background-image:url('../../assets/icon/apple-icon-60x60.png');
 }
 
 .fc-event,
@@ -786,4 +787,7 @@ a.fc-more {
 .fc-day-number{
   color: $content-text;
   opacity: 0.9;
+}
+.fc-day:hover {
+  background: #6C3779;
 }
